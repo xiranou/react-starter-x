@@ -7,6 +7,12 @@ module.exports = {
     path: path.resolve(__dirname, '../..', 'build'),
     filename: 'server.js'
   },
+  resolve: {
+    alias: {
+      app: path.resolve(__dirname, '..', '..', 'app'),
+      components: path.resolve(__dirname, '..', '..', 'app', 'components')
+    }
+  },
   module: {
     rules: [
       {
@@ -15,7 +21,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['env', 'react']
           }
         }
       }

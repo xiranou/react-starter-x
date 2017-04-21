@@ -1,6 +1,10 @@
 import express from 'express';
 import morgan from 'morgan';
 import path from 'path';
+import React from 'react';
+import { StaticRouter, matchPath } from 'react-router';
+import render from './render';
+import Routes from 'app/shared/Routes';
 
 const app = express();
 
@@ -10,6 +14,16 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:htt
 app.use('/build', express.static('build'));
 
 app.get('*', (req, res) => {
+  res
+  .status(200)
+  .send(render(
+    (
+      <StaticRouter context={{}} location={req.url}>
+        <Routes />
+      </StaticRouter>
+    )
+  ));
+
   res.sendFile(path.resolve('views/index.html'));
 });
 

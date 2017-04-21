@@ -4,13 +4,12 @@ import * as Route from 'react-router-dom';
 import App from 'components/App';
 import NotFound from 'components/NotFound';
 
-const Routes = (props) => {
-  return (
-    <div>
-      <Route path='/' component={App} />
-      <Route component={NotFound} />
-    </div>
-  );
-}
+
+const Routes = () => (
+  <div>
+    <Route path='/' exact={true} component={App} />
+    <Route component={NotFound} />
+  </div>
+);
 
 export default Routes;
