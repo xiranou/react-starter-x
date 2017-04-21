@@ -8,7 +8,7 @@
     "build:client": "node_modules/.bin/webpack --config ./configs/webpack/client.js",
     "build": "npm run build:server & npm run build:client",
     "start": "npm run build & node build/server.js",
-    "build:dev": "node_modules/.bin/webpack --progress --watch --config ./configs/webpack",
+    "build:dev": "node_modules/.bin/webpack --progress --watch --config ./configs/webpack/webpack.config.dev.js",
     "dev": "npm run build:dev & nodemon build/server.js"
   },
   "author": "Xiran Ou",
@@ -28,6 +28,8 @@
     "babel-preset-react": "^6.24.1",
     "html-loader": "^0.4.5",
     "nodemon": "^1.11.0",
+    "uglify-js": "^2.8.22",
+    "uglifyjs-webpack-plugin": "^0.4.3",
     "webpack": "^2.3.3"
   }
 }
