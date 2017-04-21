@@ -1,15 +1,15 @@
 import React from 'react';
-import * as Route from 'react-router-dom';
+import { Switch, Route } from 'react-router';
 
 import App from 'components/App';
 import NotFound from 'components/NotFound';
 
 
 const Routes = () => (
-  <div>
-    <Route path='/' exact={true} component={App} />
+  <Switch>
+    <Route exact path='/' component={App} />
     <Route component={NotFound} />
-  </div>
+  </Switch>
 );
 
 export default Routes;

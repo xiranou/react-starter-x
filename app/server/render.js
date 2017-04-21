@@ -1,14 +1,11 @@
-import { renderToString } from 'react-dom/server';
-import React from 'react';
-
-export default (renderContent) => `
+export default (renderString) => `
   <!DOCTYPE html>
   <html>
   <head>
     <title>React Starter X</title>
   </head>
   <body>
-    <div id="root">${renderToString(renderContent)}</div>
+    <div id="root">${renderString}</div>
     <script src='build/client.js'></script>
   </body>
   </html>
