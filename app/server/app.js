@@ -7,6 +7,8 @@ const app = express();
 // Setup logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 
+app.use('/build', express.static('build'));
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve('views/index.html'));
 });
