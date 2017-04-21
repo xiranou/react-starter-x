@@ -4,17 +4,14 @@ module.exports = {
   entry: './app/server',
   target: 'node',
   output: {
-    path: path.resolve(__dirname, '..', '..', 'build'),
+    path: path.resolve(__dirname, '../..', 'build'),
     filename: 'server.js'
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: [
-          /(node_modules|bower_components)/,
-          path.resolve(__dirname, '..', '..', 'app', 'server')
-        ],
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
