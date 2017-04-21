@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:server": "node_modules/.bin/webpack --config ./configs/webpack/server.js",
+    "build:client": "node_modules/.bin/webpack --config ./configs/webpack/client.js",
+    "build": "npm run build:server & npm run build:client",
+    "start": "npm run build & node build/server.js",
+    "build:dev": "node_modules/.bin/webpack --progress --watch --config ./configs/webpack",
+    "dev": "npm run build:dev & nodemon build/server.js"
   },
   "author": "Xiran Ou",
   "license": "ISC",
@@ -15,5 +20,13 @@
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.11.0",
+    "webpack": "^2.3.3"
   }
 }
