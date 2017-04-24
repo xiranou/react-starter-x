@@ -3,7 +3,10 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: './app/client',
+  entry: [
+    'babel-polyfill',
+    './app/client'
+  ],
   output: {
     path: path.resolve(__dirname, '..', '..', 'build'),
     filename: 'client.js'
