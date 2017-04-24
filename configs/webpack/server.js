@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './app/server',
+  entry: [
+    'babel-polyfill',
+    './app/server'
+  ],
   target: 'node',
   output: {
     path: path.resolve(__dirname, '../..', 'build'),
@@ -18,12 +21,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'react']
-          }
-        }
+        loader: 'babel-loader'
       }
     ]
   }
