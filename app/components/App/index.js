@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import './app.css';
+import styles from './app.scss';
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>I'm App!</h1>
+        <h1 className={styles.mookie}>I'm App!</h1>
       </div>
     )
   }

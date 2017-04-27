@@ -16,8 +16,6 @@ function merger(objValue, srcValue) {
   return merge({}, objValue, srcValue);
 }
 
-const result = mergeWith({}, base, client, merger);
-
 module.exports = [
   mergeWith({}, base, server, merger),
   mergeWith({}, base, client, merger)

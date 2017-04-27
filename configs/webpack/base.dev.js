@@ -28,14 +28,36 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"'
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[name]-[local]-[hash:base64:6]',
+                sourceMap: debug,
+                importLoaders: 1
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [require('autoprefixer')]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: debug
+              }
+            }
+          ]
         })
       }
     ]
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'app.css',
+      filename: 'main.css',
       allChunks: true
     })
   ]
