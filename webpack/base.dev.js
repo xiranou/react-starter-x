@@ -6,14 +6,14 @@ const debug = ['development', 'test'].includes(env);
 module.exports = {
   devtool: debug ? 'eval-source-map' : null,
   output: {
-    path: path.resolve(__dirname, '../..', 'build'),
+    path: path.resolve(__dirname, '../', 'build'),
     devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     filename: '[name].js'
   },
   resolve: {
     alias: {
-      app: path.resolve(__dirname, '../..', 'app'),
-      components: path.resolve(__dirname, '../..', 'app', 'components')
+      app: path.resolve(__dirname, '../', 'app'),
+      components: path.resolve(__dirname, '../', 'app', 'components')
     }
   },
   module: {

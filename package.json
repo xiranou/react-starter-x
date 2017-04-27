@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:server": "node_modules/.bin/webpack --config ./configs/webpack/server.js",
-    "build:client": "node_modules/.bin/webpack --config ./configs/webpack/client.js",
+    "build:server": "node_modules/.bin/webpack --config ./webpack/server.js",
+    "build:client": "node_modules/.bin/webpack --config ./webpack/client.js",
     "build": "npm run build:server & npm run build:client",
     "start": "npm run build & node build/server.js",
-    "build:dev": "node_modules/.bin/webpack --progress --watch --config ./configs/webpack/webpack.config.dev.js",
+    "build:dev": "node_modules/.bin/webpack --progress --watch --config ./webpack/webpack.config.dev.js",
     "dev": "npm run build:dev & nodemon build/server.js",
     "test": "node_modules/.bin/jest"
   },
